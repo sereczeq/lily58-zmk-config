@@ -10,6 +10,25 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    combos {
+        compatible = "zmk,combos";
+
+        enter-space-esc-combo {
+            bindings = <&kp ESC>;
+            key-positions = <53 54>;
+            layers = <0>;
+        };
+    };
+
+    behaviors {
+        td_lshift: td_lshift {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_LSHIFT";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_SHIFT>, <&caps_word>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
